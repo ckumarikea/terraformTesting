@@ -1,7 +1,7 @@
 variable "gopl_storage_account_name" {
     type = string
     description = "Name of storage account"
-    default = "gopldevstorage001"
+    default = "goplsbxstorage786"
 }
 variable "gopl_resource_group_name" {
     type = string
