@@ -1,6 +1,6 @@
-resource "azurerm_role_assignment" "role_assigment" {
-  count                   = "${var.addRBACToResource == true ? length(var.principalIds) : 0}"
-  scope                   = var.rgid
-  role_definition_name    = var.builtInRoleType
-  principal_id            = var.principalIds[count.index]
+resource "azurerm_role_assignment" "gopl_role_assignment" {
+  count                   = "${var.gopl_addRBACToResource == true ? length(var.gopl_principalIds) : 0}"
+  scope                   = var.gopl_resource_group_id
+  role_definition_name    = var.gopl_builtInRoleType
+  principal_id            = var.gopl_principalIds[count.index]
 }

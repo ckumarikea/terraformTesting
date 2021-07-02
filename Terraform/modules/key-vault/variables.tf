@@ -1,40 +1,40 @@
-variable "kvname" {
+variable "gopl_key_vault_name" {
     type = string
-    default = "testkv-kvssbkv12345"
+    default = "gopl-keyvault007"
     description = "Specifies the name of the key vault."
 }
 
-variable "addKeyVault" {
+variable "create_gopl_key_vault" {
   type = bool
   default = false
 }
-variable "rgname" {
+variable "gopl_key_vault_resource_group_name" {
     type = string
     default = "rg-MyFirstTerraform"
 }
-variable "location" {
+variable "gopl_key_vault_location" {
     type = string
     default = "westus"
 }
-variable "sku" {
+variable "gopl_key_vault_sku_name" {
     type = string
     default = "standard"
     description = "Specifies whether the key vault is a standard vault or a premium vault."
 }
 
-variable "enabledForDiskEncryption" {
-    type = string
-    default = "true"
+variable "gopl_key_vault_enabled_for_disk_encryption" {
+    type = bool
+    default = true
     description = "Specifies whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys."
 }
 
-variable "enabledForTemplateDeployment" {
-    type = string
-    default = "true"
+variable "gopl_enabledForTemplateDeployment" {
+    type = bool
+    default = true
     description = "Specifies whether Azure Resource Manager is permitted to retrieve secrets from the key vault."
 }
 
-variable "enabledForDeployment" {
+variable "gopl_enabledForDeployment" {
     type = bool
     default = true
     description = "Specifies whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault."  
@@ -45,7 +45,17 @@ variable "enabledForSoftDelete" {
     description = "Specifies whether Azure Resource Manager is permitted to soft delete secrets from the key vault."  
 }
 
-variable "keysPermissions" {
+variable "gopl_key_vault_soft_delete_retention_days" {
+    type = number
+    default = 7
+}
+
+variable "gopl_key_vault_purge_protection_enabled" {
+    type = bool
+    default = true
+}
+
+variable "gopl_keysPermissions" {
     type = list(string)
     default = [ "get",
                 "list",
@@ -59,7 +69,7 @@ variable "keysPermissions" {
     description = "Specifies the permissions to keys in the vault. Valid values are: all, encrypt, decrypt, wrapKey, unwrapKey, sign, verify, get, list, create, update, import, delete, backup, restore, recover, and purge."  
 }
 
-variable "secretsPermissions" {
+variable "gopl_secretsPermissions" {
     type = list(string)
     default = [ "get",
                 "list",
@@ -71,7 +81,7 @@ variable "secretsPermissions" {
     description = "Specifies the permissions to secrets in the vault. Valid values are: all, get, list, set, delete, backup, restore, recover, and purge."  
 }
 
-variable "servicePrincipalObjects" {
+variable "gopl_servicePrincipalObjects" {
   type = list(object({
     Display_User_Name = string
     Id = string
@@ -131,7 +141,7 @@ variable "servicePrincipalObjects" {
         ]
       }
 
-variable "tagValues" {
+variable "gopl_key_vault_tags" {
   type = object({
       application = string
       note = string

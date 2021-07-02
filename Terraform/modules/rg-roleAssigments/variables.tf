@@ -1,24 +1,25 @@
-variable "addRBACToResource" {
+variable "gopl_addRBACToResource" {
   type = bool
   default = false
 }
 
-variable "principalIds" {
+variable "gopl_principalIds" {
   type = list(string)
-  default = [ "2e4a088c-63ac-4cce-88e3-dc916b1266df", "b9088628-62ca-4467-b005-629f8f6b3b2d"]
+  default = [ ]
+  description = "Provide the list of existing Principal IDs that needs to be given access."
 }
 
-variable "builtInRoleType" {
+variable "gopl_builtInRoleType" {
   type = string
   default  = "Owner"
 }
 
-variable "rgname" {
+variable "gopl_resource_group_name" {
     type = string
-    default = "Terraformrg" 
+    default = "goplTerraformRG007" 
   
 }
 
-variable "rgid" {
+variable "gopl_resource_group_id" {
     type = string
 }

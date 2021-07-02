@@ -1,25 +1,41 @@
-variable "workspaceName" {
+variable "gopl_databricks_workspace_name" {
     type = string
-    default = "default-db-workspace"
+    default = "gopl-databricks-workspace001"
 }
 
-variable "location" {
+variable "gopl_databricks_workspace_location" {
   type = string
-  default = "East US"
+  default = "West Europe"
 }
 
-variable "sku" {
+variable "gopl_databricks_sku" {
     type = string
     default = "standard"
     description = "Specifies whether the key vault is a standard vault or a premium vault."
 }
 
-variable "rgname" {
+variable "gopl_resource_group_name" {
     type = string
     default = "rg-MyFirstTerraform"
 }
 
-variable "managedResourceGroupName" {
+variable "gopl_databricks_managed_resource_group_name" {
     type = string
-    default = "terraformrg"
+    default = "goplTerraformRgmanage"
+}
+
+variable "gopl_databricks_workspace_tags" {
+    type = object({
+      application = string
+      note = string
+  })
+  default = {
+      application = "Gap Overlap in Product Lifecycle"
+      note = "Subscription level deployment"
+  }
+}
+
+variable "enable_databricks_worspace" {
+    type = bool
+    default = true
 }

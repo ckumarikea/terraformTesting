@@ -1,7 +1,7 @@
-output "kv_id" {
-    value = azurerm_key_vault.key_vault.*.id
+output "gopl_key_vault_id" {
+    value = azurerm_key_vault.gopl_key_vault.*.id
 }
 
-output "kv_name" {
-    value = azurerm_key_vault.key_vault.*.name
+output "key_vault_name" {
+    value = azurerm_key_vault.gopl_key_vault.*.name
 }
