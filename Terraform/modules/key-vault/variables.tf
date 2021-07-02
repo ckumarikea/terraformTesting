@@ -1,6 +1,6 @@
 variable "gopl_key_vault_name" {
     type = string
-    default = "gopl-keyvault007"
+    default = "gopl-sbxkeyvault786"
     description = "Specifies the name of the key vault."
 }
 
